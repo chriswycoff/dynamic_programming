@@ -10,8 +10,9 @@ import math
 	
 #mile_posts = [0,100,200,300,400,500,605]
 
-mile_posts = [0,105,125,250]
+mile_posts = [0,105,125,225,250,350,450,550]
 
+#mile_posts = [0,100,175,200,275,375,475,575,675]
 
 def main(mile_posts):
 
@@ -32,22 +33,34 @@ def main(mile_posts):
 
 		posts_to_use.append(new_post)
 
-	posts_to_use.append(num_mile_post-1)
 
 	print(optimal)
 
+	the_next = posts_to_use[-1]
+	
+	final_posts_to_use = []
+	final_posts_to_use.insert(0,the_next)
+
+	while True:
+		the_next = posts_to_use[the_next-1] 
+
+		if the_next == 0:
+			break
+
+		final_posts_to_use.insert(0,the_next)
+
+	final_posts_to_use.insert(0,0)
+
 	print(posts_to_use)
+
+	print(final_posts_to_use)
+
+
+
+
 
 
 
 
 if __name__ == "__main__":
 	main(mile_posts)
-
-
-
-
-# Hope you find this useful, if you do please send me an email: chriswycoff@chriswycoff.com
-
-
-
